@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Your Name | Professional Portfolio</title>
+    <!-- Google Fonts: Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(145deg, #f9f3e6 0%, #f0e7d9 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            color: #2c3e4e;
+        }
+
+        /* Pastel colour palette:
+           Soft cream background, muted sage, blush accents, gentle blue-grey text */
+        .card {
+            max-width: 780px;
+            width: 100%;
+            background: #fffef7;
+            border-radius: 2rem;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Profile / intro section */
+        .intro {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .avatar {
+            font-size: 3.8rem;
+            background: #e6dfd1;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            border-radius: 50%;
+            margin: 0 auto 1.2rem;
+            color: #8b7a6b;
+            box-shadow: 0 8px 14px rgba(0,0,0,0.02);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            color: #3a5e6b;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #7f8e79;
+            background: #f5efe7;
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            margin-top: 0.5rem;
+        }
+
+        .description {
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #4a5b62;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        hr {
+            margin: 1.8rem 0;
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, #f0e2cf, #d9cdb6, #f0e2cf);
+        }
+
+        /* Buttons grid */
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+            margin: 1.8rem 0 0.8rem;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #ffffff;
+            border: 1px solid #e2dacf;
+            padding: 0.9rem 0.5rem;
+            border-radius: 60px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #3a5e6b;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+            cursor: pointer;
+        }
+
+        .btn i {
+            font-size: 1.2rem;
+            color: #9ab3a5;
+            transition: color 0.2s;
+        }
+
+        .btn:hover {
+            background: #fdf8f0;
+            border-color: #c5b9a6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+        }
+
+        .btn:hover i {
+            color: #7f8e79;
+        }
+
+        /* Special style for external link (KCL) */
+        .btn-kcl {
+            background: #f8f6f0;
+            border-color: #d3cbbe;
+        }
+
+        /* footer */
+        .footer-note {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 0.75rem;
+            color: #b7aa97;
+            letter-spacing: 0.3px;
+        }
+
+        /* Responsive */
+        @media (max-width: 550px) {
+            .card {
+                padding: 1.8rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .buttons-grid {
+                gap: 0.9rem;
+            }
+            .btn {
+                padding: 0.7rem 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="intro">
+            <div class="avatar">
+                <i class="fas fa-user-astronaut"></i>
+            </div>
+            <h1>Alex Johnson</h1>
+            <div class="tagline">
+                <i class="fas fa-map-pin"></i> Global researcher &nbsp;|&nbsp; China studies
+            </div>
+            <div class="description">
+                Welcome to my professional hub. I focus on cross-cultural insights, 
+                China's political economy, and digital transformation.
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="buttons-grid">
+            <!-- CV button (replace # with actual file link) -->
+            <a href="#" class="btn" id="cvButton">
+                <i class="fas fa-file-alt"></i> Download CV
+            </a>
+
+            <!-- LinkedIn button (replace # with actual profile link) -->
+            <a href="#" class="btn" id="linkedinButton">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+
+            <!-- Email button -->
+            <a href="#" class="btn" id="emailButton">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+
+            <!-- KCL China Studies Society external website -->
+            <a href="#" class="btn btn-kcl" id="kclButton">
+                <i class="fas fa-university"></i> KCL China Studies Society
+            </a>
+        </div>
+
+        <div class="footer-note">
+            <i class="fas fa-hand-peace"></i> Connect meaningfully — let's collaborate
+        </div>
+    </div>
+
+    <script>
+        // ==============================================
+        // REPLACE THESE LINKS WITH YOUR REAL ONES
+        // ==============================================
+        // 1) CV link: upload your CV.pdf to GitHub repo and put the raw / relative path
+        const CV_LINK = "cv_example.pdf";        // e.g., "cv_john_doe.pdf" or "/assets/cv.pdf"
+        // 2) LinkedIn profile URL
+        const LINKEDIN_URL = "https://www.linkedin.com/in/yourprofile/";
+        // 3) Email address (opens default email client)
+        const EMAIL_ADDRESS = "your.email@example.com";
+        // 4) KCL China Studies Society website
+        const KCL_WEBSITE = "https://www.kclsu.org/groups/activities/society/china-studies/";  // official or any real link
+
+        // ----------------------------------------------
+        // If you don't have the exact KCL page, you can change to:
+        // const KCL_WEBSITE = "https://www.kcl.ac.uk/china-studies";  (example)
+        // ----------------------------------------------
+
+        // Get button elements
+        const cvBtn = document.getElementById('cvButton');
+        const linkedinBtn = document.getElementById('linkedinButton');
+        const emailBtn = document.getElementById('emailButton');
+        const kclBtn = document.getElementById('kclButton');
+
+        // Assign click handlers
+        if (cvBtn) {
+            cvBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (CV_LINK && CV_LINK !== "cv_example.pdf") {
+                    window.open(CV_LINK, '_blank');
+                } else {
+                    alert("📄 CV link not yet configured. Please replace CV_LINK in the script with your actual CV file path.");
+                }
+            });
+        }
+
+        if (linkedinBtn) {
+            linkedinBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (LINKEDIN_URL && LINKEDIN_URL !== "https://www.linkedin.com/in/yourprofile/") {
+                    window.open(LINKEDIN_URL, '_blank');
+                } else {
+                    alert("🔗 LinkedIn URL not set. Edit the script and add your LinkedIn profile link.");
+                }
+            });
+        }
+
+        if (emailBtn) {
+            emailBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (EMAIL_ADDRESS && EMAIL_ADDRESS !== "your.email@example.com") {
+                    window.location.href = `mailto:${EMAIL_ADDRESS}`;
+                } else {
+                    alert("✉️  Email address not set. Please update EMAIL_ADDRESS in the script.");
+                }
+            });
+        }
+
+        if (kclBtn) {
+            kclBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (KCL_WEBSITE && KCL_WEBSITE !== "https://www.kclsu.org/groups/activities/society/china-studies/") {
+                    window.open(KCL_WEBSITE, '_blank');
+                } else {
+                    alert("🌐 KCL China Studies Society link is not configured. Replace the KCL_WEBSITE variable with the correct URL.");
+                }
+            });
+        }
+    </script>
+</body>
+</html>
