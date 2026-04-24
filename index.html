@@ -2,13 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>meilindev · Premium Web Development</title>
-    <!-- Google Fonts: Montserrat + optional Inter fallback -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meilindev · simple web craft + blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- AOS-like library? We'll do custom Intersection Observer -->
     <style>
         * {
             margin: 0;
@@ -18,366 +15,184 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: radial-gradient(circle at 10% 20%, #eef5e8 0%, #dde8d7 100%);
-            color: #1f2e1c;
+            background: #f2f7ef;
+            color: #2a3e28;
             line-height: 1.5;
-            overflow-x: hidden;
         }
 
-        /* Custom cursor (optional but sleek) */
-        body {
-            cursor: default;
-        }
-        .custom-cursor {
-            width: 12px;
-            height: 12px;
-            background: #5b8c5a;
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 999;
-            transition: transform 0.1s ease;
-            mix-blend-mode: difference;
-        }
-        @media (max-width: 768px) {
-            .custom-cursor { display: none; }
-        }
-
-        /* Smooth scroll behavior */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* floating blobs background */
-        .blob {
-            position: fixed;
-            width: 40vw;
-            height: 40vw;
-            background: radial-gradient(circle, rgba(139, 181, 106, 0.15) 0%, rgba(100, 140, 80, 0) 70%);
-            border-radius: 50%;
-            z-index: -2;
-            filter: blur(60px);
-        }
-        .blob-1 { top: -10vh; left: -10vw; }
-        .blob-2 { bottom: -20vh; right: -15vw; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(100, 130, 80, 0.12) 0%, transparent 70%); }
-        .blob-3 { top: 40vh; right: 20%; width: 25vw; height: 25vw; background: radial-gradient(circle, rgba(180, 210, 150, 0.1) 0%, transparent 70%); }
-
-        /* container */
         .container {
-            max-width: 1280px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 2rem 2rem 4rem;
-            position: relative;
-            z-index: 2;
+            padding: 2rem 1.5rem;
         }
 
-        /* glassmorphism card style */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(8px);
-            border-radius: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        /* header */
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid #ddecd4;
+            padding-bottom: 1rem;
         }
-
-        /* Hero section */
-        .hero {
-            text-align: center;
-            padding: 3rem 2rem 4rem;
-            margin-bottom: 2rem;
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(4px);
-            border-radius: 3rem;
-            border: 1px solid rgba(255,255,240,0.6);
-        }
-        .logo {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: rgba(255,255,255,0.8);
-            border-radius: 80px;
-            padding: 0.6rem 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-            border: 1px solid rgba(150,180,120,0.3);
-        }
-        .logo i {
-            font-size: 2.2rem;
-            color: #4a7c48;
-        }
-        .logo h2 {
+        .logo h1 {
+            font-size: 1.8rem;
             font-weight: 700;
-            font-size: 1.9rem;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #2a5a3b, #60945c);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
+            color: #3a6b3a;
         }
-        .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            line-height: 1.2;
-            background: linear-gradient(125deg, #204d2c, #568c51);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 1.2rem;
-        }
-        .hero .badge {
-            display: inline-block;
-            background: rgba(100,140,80,0.15);
-            backdrop-filter: blur(4px);
-            border-radius: 40px;
-            padding: 0.3rem 1.2rem;
+        .logo p {
             font-size: 0.8rem;
-            font-weight: 600;
-            color: #3a6a3a;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(120,160,100,0.3);
+            color: #6b8f63;
         }
-        .hero p {
-            max-width: 700px;
-            margin: 1.2rem auto;
-            font-size: 1.1rem;
-            color: #2e462a;
+        .nav-links a {
+            margin-left: 1.5rem;
+            text-decoration: none;
+            color: #4a6e44;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #2c5a2c;
         }
 
-        /* Button grid - animated buttons */
-        .button-grid {
+        /* hero / intro */
+        .intro {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            border: 1px solid #e2efda;
+        }
+        .intro h2 {
+            font-size: 1.8rem;
+            color: #2c5a2c;
+            margin-bottom: 0.5rem;
+        }
+        .intro p {
+            margin: 1rem 0;
+            color: #4c6147;
+        }
+
+        /* button row (your 5 buttons) */
+        .button-row {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2.5rem 0 1rem;
+            gap: 0.8rem;
+            margin: 2rem 0 1rem;
         }
         .btn {
-            position: relative;
+            background: white;
+            border: 1px solid #caddc0;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            text-decoration: none;
+            color: #3a6b3a;
+            font-size: 0.9rem;
+            transition: all 0.2s;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: white;
-            border: none;
-            padding: 0.8rem 1.8rem;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: #2d5a3a;
-            text-decoration: none;
-            transition: all 0.25s;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-            cursor: pointer;
-            z-index: 1;
-            backdrop-filter: blur(5px);
-            background: rgba(255,255,245,0.9);
-            border: 1px solid rgba(170,200,140,0.5);
-            overflow: hidden;
-        }
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, #e2f0da, #cae2bd);
-            z-index: -1;
-            transition: transform 0.4s ease;
-            transform: scaleX(0);
-            transform-origin: right;
-        }
-        .btn:hover::before {
-            transform: scaleX(1);
-            transform-origin: left;
+            gap: 8px;
         }
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 14px 25px -10px rgba(70,100,50,0.2);
-            border-color: #a8ca98;
-        }
-        .btn i {
-            font-size: 1.1rem;
-            transition: transform 0.2s;
-        }
-        .btn:hover i {
-            transform: translateX(3px);
+            background: #edf7e7;
+            border-color: #9fbe91;
+            transform: translateY(-2px);
         }
 
-        /* Section headers */
+        /* blog preview section */
         .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin: 4rem 0 2rem;
-            position: relative;
-            display: inline-block;
-            width: 100%;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1.5rem;
+            color: #3a613a;
         }
-        .section-title span {
-            background: linear-gradient(135deg, #2a5a3b, #5f8c54);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            position: relative;
-        }
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: #9bc28a;
-            margin: 0.8rem auto 0;
-            border-radius: 6px;
-        }
-
-        /* Services cards with 3D tilt and glass */
-        .cards-grid {
+        .blog-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.8rem;
         }
-        .service-card {
-            background: rgba(255,255,248,0.8);
-            backdrop-filter: blur(4px);
-            border-radius: 2rem;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(190,210,165,0.6);
-            box-shadow: 0 15px 30px -12px rgba(0,0,0,0.05);
+        .blog-card {
+            background: white;
+            border-radius: 1.2rem;
+            padding: 1.5rem;
+            border: 1px solid #e0eed8;
+            transition: all 0.2s;
         }
-        .service-card:hover {
-            transform: translateY(-10px) scale(1.01);
-            background: rgba(255,255,255,0.9);
-            border-color: #c2dfb5;
-            box-shadow: 0 28px 40px -16px rgba(70,100,50,0.2);
+        .blog-card:hover {
+            transform: translateY(-4px);
+            border-color: #b7d6a8;
         }
-        .service-card i {
-            font-size: 2.8rem;
-            background: linear-gradient(135deg, #457a42, #80b36b);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
+        .blog-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
         }
-        .service-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
+        .blog-card h3 a {
+            text-decoration: none;
+            color: #2c5a2c;
+        }
+        .blog-card .date {
+            font-size: 0.7rem;
+            color: #8aa882;
             margin-bottom: 0.8rem;
         }
-
-        /* featured projects section (past projects preview) */
-        .project-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        .project-item {
-            background: rgba(250,250,245,0.85);
-            border-radius: 1.5rem;
-            overflow: hidden;
-            transition: all 0.3s;
-            border: 1px solid #deecce;
-        }
-        .project-item:hover {
-            transform: scale(1.02);
-            border-color: #b8d6a4;
-        }
-        .project-img {
-            height: 160px;
-            background: linear-gradient(145deg, #c7dfbb, #dceacc);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: #517d44;
-        }
-        .project-info {
-            padding: 1.2rem;
-        }
-        .project-info h4 {
-            font-weight: 700;
-            margin-bottom: 0.4rem;
-        }
-
-        /* tech stack */
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.8rem;
-            margin: 2rem 0;
-        }
-        .tech-item {
-            background: rgba(255,255,255,0.7);
-            backdrop-filter: blur(4px);
-            border-radius: 60px;
-            padding: 0.5rem 1.2rem;
+        .blog-card p {
             font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid rgba(150,190,120,0.4);
+            color: #52684b;
         }
-
-        /* testimonial slider (simple manual) */
-        .testimonial {
-            background: rgba(255,255,245,0.7);
-            border-radius: 2rem;
-            padding: 2rem;
-            text-align: center;
-            max-width: 700px;
-            margin: 2rem auto;
-            border: 1px solid #d9eace;
-        }
-        .testimonial p {
-            font-style: italic;
-            font-size: 1rem;
+        .read-more {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #53824b;
+            text-decoration: none;
         }
 
         /* footer */
         .footer {
+            margin-top: 4rem;
             text-align: center;
-            margin-top: 5rem;
-            padding: 2rem 0 1rem;
-            border-top: 1px solid rgba(150,180,120,0.3);
             font-size: 0.8rem;
+            color: #8aa882;
+            border-top: 1px solid #e0eed8;
+            padding-top: 2rem;
         }
 
-        /* reveal animation */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (max-width: 700px) {
-            .container { padding: 1.5rem; }
-            .hero h1 { font-size: 2.2rem; }
+        @media (max-width: 650px) {
+            .site-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-links a {
+                margin-left: 0;
+                margin-right: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-<div class="custom-cursor" id="cursor"></div>
-<div class="blob blob-1"></div>
-<div class="blob blob-2"></div>
-<div class="blob blob-3"></div>
-
 <div class="container">
-    <div class="hero fade-up">
+    <!-- header -->
+    <div class="site-header">
         <div class="logo">
-            <i class="fas fa-globe"></i>
-            <h2>meilindev</h2>
+            <h1>meilindev</h1>
+            <p>simple, honest web craft</p>
         </div>
-        <div class="badge">✦ premium web craftsmanship ✦</div>
-        <h1>Websites that don't just look good — <br> they perform.</h1>
-        <p>Custom development, modern UI/UX, and future-proof code. From zero to launch, your brand deserves a standout digital presence.</p>
-        <div class="button-grid">
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Blog</a>
+            <a href="#">About</a>
+        </div>
+    </div>
+
+    <!-- intro section / what I do (informational) -->
+    <div class="intro">
+        <h2>I build clear, human-friendly websites.</h2>
+        <p>No fluff, no hidden fees. Just HTML, CSS, and a bit of JavaScript to make things work. <strong>For small businesses, creators, and blogs</strong> – your online presence should feel like you.</p>
+        <p>📄 I also share what I learn: coding tips, design thoughts, and honest advice for the self‑employed.</p>
+        <div class="button-row">
             <a href="#" class="btn" id="cvBtn"><i class="fas fa-file-alt"></i> CV</a>
             <a href="#" class="btn" id="projectsBtn"><i class="fas fa-folder-open"></i> Past projects</a>
             <a href="#" class="btn" id="linkedinBtn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
@@ -386,118 +201,75 @@
         </div>
     </div>
 
-    <!-- Services -->
-    <div class="fade-up">
-        <div class="section-title"><span>what i deliver</span></div>
-        <div class="cards-grid">
-            <div class="service-card"><i class="fas fa-code"></i><h3>Custom dev</h3><p>Hand-coded, responsive, and optimized for your exact needs.</p></div>
-            <div class="service-card"><i class="fas fa-tachometer-alt"></i><h3>Lightning speed</h3><p>Performance-first architecture, 90+ PageSpeed scores.</p></div>
-            <div class="service-card"><i class="fas fa-palette"></i><h3>Premium UI</h3><p>Glassmorphism, micro-interactions, modern aesthetics.</p></div>
-            <div class="service-card"><i class="fas fa-chart-line"></i><h3>SEO ready</h3><p>Semantic markup, meta tags, and structured data.</p></div>
+    <!-- blog preview (static posts – easy to add more) -->
+    <div class="section-title">📝 recent thoughts & tutorials</div>
+    <div class="blog-cards">
+        <div class="blog-card">
+            <h3><a href="#">Why I still write vanilla HTML/CSS for clients</a></h3>
+            <div class="date">Apr 18, 2025</div>
+            <p>Frameworks are great, but for 90% of small business sites, plain code is faster, cheaper, and easier to maintain...</p>
+            <a href="#" class="read-more">read more →</a>
+        </div>
+        <div class="blog-card">
+            <h3><a href="#">How to choose a colour palette (sage green edition)</a></h3>
+            <div class="date">Apr 5, 2025</div>
+            <p>First impressions matter. I’ll walk you through picking calm, professional colours that work for your brand...</p>
+            <a href="#" class="read-more">read more →</a>
+        </div>
+        <div class="blog-card">
+            <h3><a href="#">3 things every small business website needs</a></h3>
+            <div class="date">Mar 22, 2025</div>
+            <p>Clear contact, mobile-friendly design, and one honest goal. You don't need 50 plugins to succeed online...</p>
+            <a href="#" class="read-more">read more →</a>
         </div>
     </div>
 
-    <!-- Past projects preview (linked to your projects link) -->
-    <div class="fade-up">
-        <div class="section-title"><span>selected work</span></div>
-        <div class="project-showcase">
-            <div class="project-item"><div class="project-img"><i class="fas fa-laptop-code"></i></div><div class="project-info"><h4>Brand Elevate</h4><p>Full corporate site with CMS integration</p></div></div>
-            <div class="project-item"><div class="project-img"><i class="fas fa-store"></i></div><div class="project-info"><h4>Artisan Market</h4><p>E‑commerce UI & checkout flow</p></div></div>
-            <div class="project-item"><div class="project-img"><i class="fas fa-graduation-cap"></i></div><div class="project-info"><h4>Edu platform</h4><p>Interactive learning dashboard</p></div></div>
-        </div>
-        <div style="text-align: center; margin: 1rem 0;"><a href="#" class="btn" id="viewAllBtn" style="background: transparent;">View full portfolio →</a></div>
-    </div>
-
-    <!-- Tech stack & trust -->
-    <div class="fade-up">
-        <div class="section-title"><span>tech & tools</span></div>
-        <div class="tech-stack">
-            <span class="tech-item">HTML5/CSS3</span><span class="tech-item">JavaScript (ES6+)</span><span class="tech-item">React/Vue</span>
-            <span class="tech-item">Git & GitHub</span><span class="tech-item">Figma</span><span class="tech-item">Responsive design</span>
-        </div>
-    </div>
-
-    <!-- Testimonial / social proof -->
-    <div class="testimonial fade-up">
-        <i class="fas fa-quote-left" style="font-size: 1.8rem; color: #89b67a; opacity: 0.6;"></i>
-        <p>"meilindev rebuilt our company site and we saw 40% more engagement. Flawless communication and modern design."</p>
-        <p style="margin-top: 0.8rem; font-weight: 600;">— Sarah Chen, Founder</p>
+    <!-- optional note: full blog archive -->
+    <div style="text-align: center; margin: 2rem 0;">
+        <a href="#" class="btn" style="background:#eaf5e3;">📚 see all blog posts →</a>
     </div>
 
     <div class="footer">
-        <i class="fas fa-heart" style="color: #8bb56a;"></i> meilindev — modern web architecture, human touch.
+        <i class="fas fa-code"></i> meilindev · built with HTML/CSS/JS · design for clarity
     </div>
 </div>
 
 <script>
     // ==========================================
-    // REPLACE WITH YOUR REAL LINKS
+    // 🔁 REPLACE THESE WITH YOUR REAL LINKS
     // ==========================================
     const CV_LINK = "cv_meilindev.pdf";
-    const PROJECTS_LINK = "https://yourportfolio.com/projects";
+    const PROJECTS_LINK = "https://your-portfolio-link.com";
     const LINKEDIN_URL = "https://linkedin.com/in/meilindev";
     const EMAIL_ADDRESS = "hello@meilindev.com";
     const FIVERR_URL = "https://fiverr.com/meilindev";
-    const VIEW_ALL_PROJECTS_LINK = PROJECTS_LINK; // same as past projects
 
-    // Button handlers
+    // Buttons
     document.getElementById('cvBtn')?.addEventListener('click', (e) => {
         e.preventDefault();
         if (CV_LINK !== "cv_meilindev.pdf") window.open(CV_LINK, '_blank');
-        else alert("📄 Upload your CV and update CV_LINK.");
+        else alert("📄 Please upload your CV and update CV_LINK in the script.");
     });
     document.getElementById('projectsBtn')?.addEventListener('click', (e) => {
         e.preventDefault();
-        if (PROJECTS_LINK !== "https://yourportfolio.com/projects") window.open(PROJECTS_LINK, '_blank');
-        else alert("📁 Set PROJECTS_LINK to your portfolio.");
+        if (PROJECTS_LINK !== "https://your-portfolio-link.com") window.open(PROJECTS_LINK, '_blank');
+        else alert("📁 Add your past projects link (GitHub repo, Notion, or simple portfolio page).");
     });
     document.getElementById('linkedinBtn')?.addEventListener('click', (e) => {
         e.preventDefault();
         if (LINKEDIN_URL !== "https://linkedin.com/in/meilindev") window.open(LINKEDIN_URL, '_blank');
-        else alert("🔗 Update LinkedIn URL.");
+        else alert("🔗 Set your LinkedIn profile URL.");
     });
     document.getElementById('emailBtn')?.addEventListener('click', (e) => {
         e.preventDefault();
         if (EMAIL_ADDRESS !== "hello@meilindev.com") window.location.href = `mailto:${EMAIL_ADDRESS}`;
-        else alert("✉️ Set your email address.");
+        else alert("✉️ Add your email address.");
     });
     document.getElementById('fiverrBtn')?.addEventListener('click', (e) => {
         e.preventDefault();
         if (FIVERR_URL !== "https://fiverr.com/meilindev") window.open(FIVERR_URL, '_blank');
-        else alert("⭐ Add your Fiverr profile link.");
+        else alert("⭐ Add your Fiverr profile URL.");
     });
-    document.getElementById('viewAllBtn')?.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (VIEW_ALL_PROJECTS_LINK !== "https://yourportfolio.com/projects") window.open(VIEW_ALL_PROJECTS_LINK, '_blank');
-        else alert("📁 Past projects link not set.");
-    });
-
-    // Scroll reveal (Intersection Observer)
-    const fadeElements = document.querySelectorAll('.fade-up');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
-    fadeElements.forEach(el => observer.observe(el));
-
-    // Custom cursor (optional)
-    const cursor = document.getElementById('cursor');
-    if (cursor) {
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX - 6 + 'px';
-            cursor.style.top = e.clientY - 6 + 'px';
-        });
-        document.querySelectorAll('a, .btn').forEach(link => {
-            link.addEventListener('mouseenter', () => cursor.style.transform = 'scale(1.8)');
-            link.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
-        });
-    }
-
-    // Force any existing element with .btn to be interactive
 </script>
 </body>
 </html>
