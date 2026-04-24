@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>meilindev · simple web craft + blog</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>meilindev · modern websites for small business</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -15,73 +15,195 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: #f2f7ef;
-            color: #2a3e28;
+            background: #f5faf2;
+            color: #1f2e1c;
             line-height: 1.5;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 2rem 1.5rem;
         }
 
         /* header */
-        .site-header {
+        .header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
+            align-items: center;
             flex-wrap: wrap;
             margin-bottom: 3rem;
-            border-bottom: 2px solid #ddecd4;
             padding-bottom: 1rem;
+            border-bottom: 2px solid #d4e8ca;
         }
         .logo h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #3a6b3a;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #2c6e3c;
+            letter-spacing: -0.5px;
         }
         .logo p {
             font-size: 0.8rem;
-            color: #6b8f63;
+            color: #6f9a65;
         }
-        .nav-links a {
-            margin-left: 1.5rem;
+        .nav a {
+            margin-left: 1.8rem;
             text-decoration: none;
-            color: #4a6e44;
             font-weight: 500;
+            color: #3a6842;
         }
-        .nav-links a:hover {
-            color: #2c5a2c;
+        .nav a:hover {
+            color: #1f4a2a;
         }
 
-        /* hero / intro */
-        .intro {
+        /* hero section */
+        .hero {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f9ec 100%);
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 25px -12px rgba(0,0,0,0.08);
+            border: 1px solid #e2f0da;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #255f33, #558f4a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+        .hero .subhead {
+            font-size: 1.2rem;
+            color: #4e6b46;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+        .hero .price-tag {
+            display: inline-block;
+            background: #eef5e8;
+            border-radius: 60px;
+            padding: 0.4rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #2c6e3c;
+            margin-bottom: 1.5rem;
+        }
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0 0;
+        }
+        .btn-primary {
+            background: #2c6e3c;
+            color: white;
+            border: none;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-primary:hover {
+            background: #1f552d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(44,110,60,0.2);
+        }
+        .btn-secondary {
+            background: white;
+            border: 1px solid #c2dfb5;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            color: #2c6e3c;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-secondary:hover {
+            background: #f4fbf0;
+            border-color: #9ac18a;
+        }
+
+        /* selling points */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .feature {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #e2eed9;
+            transition: all 0.2s;
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+            border-color: #bbd8ab;
+        }
+        .feature i {
+            font-size: 2.2rem;
+            color: #4c8b48;
+            margin-bottom: 1rem;
+        }
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* social proof / work examples */
+        .work {
             background: white;
             border-radius: 1.5rem;
             padding: 2rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-            border: 1px solid #e2efda;
+            margin: 2rem 0;
+            border: 1px solid #e2eed9;
         }
-        .intro h2 {
-            font-size: 1.8rem;
-            color: #2c5a2c;
+        .work h3 {
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .work-item {
+            background: #f8fef4;
+            border-radius: 1rem;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid #dcecd2;
+        }
+        .work-item i {
+            font-size: 2rem;
+            color: #6f9a65;
             margin-bottom: 0.5rem;
         }
-        .intro p {
-            margin: 1rem 0;
-            color: #4c6147;
-        }
 
-        /* button row (your 5 buttons) */
-        .button-row {
+        /* buttons row (your 5 links) */
+        .contact-row {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 0.8rem;
             margin: 2rem 0 1rem;
         }
-        .btn {
+        .contact-btn {
             background: white;
             border: 1px solid #caddc0;
             padding: 0.6rem 1.2rem;
@@ -90,147 +212,94 @@
             text-decoration: none;
             color: #3a6b3a;
             font-size: 0.9rem;
-            transition: all 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            transition: all 0.2s;
         }
-        .btn:hover {
+        .contact-btn:hover {
             background: #edf7e7;
             border-color: #9fbe91;
             transform: translateY(-2px);
         }
 
-        /* blog preview section */
-        .section-title {
-            font-size: 1.6rem;
-            font-weight: 600;
-            margin: 2.5rem 0 1.5rem;
-            color: #3a613a;
-        }
-        .blog-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.8rem;
-        }
-        .blog-card {
-            background: white;
-            border-radius: 1.2rem;
-            padding: 1.5rem;
-            border: 1px solid #e0eed8;
-            transition: all 0.2s;
-        }
-        .blog-card:hover {
-            transform: translateY(-4px);
-            border-color: #b7d6a8;
-        }
-        .blog-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        .blog-card h3 a {
-            text-decoration: none;
-            color: #2c5a2c;
-        }
-        .blog-card .date {
-            font-size: 0.7rem;
-            color: #8aa882;
-            margin-bottom: 0.8rem;
-        }
-        .blog-card p {
-            font-size: 0.9rem;
-            color: #52684b;
-        }
-        .read-more {
-            display: inline-block;
-            margin-top: 1rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #53824b;
-            text-decoration: none;
-        }
-
         /* footer */
         .footer {
-            margin-top: 4rem;
             text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #dcecd2;
             font-size: 0.8rem;
             color: #8aa882;
-            border-top: 1px solid #e0eed8;
-            padding-top: 2rem;
         }
 
-        @media (max-width: 650px) {
-            .site-header {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .nav-links a {
-                margin-left: 0;
-                margin-right: 1rem;
-            }
+        @media (max-width: 700px) {
+            .hero h2 { font-size: 1.8rem; }
+            .header { flex-direction: column; gap: 1rem; text-align: center; }
+            .nav a { margin: 0 0.8rem; }
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <!-- header -->
-    <div class="site-header">
+    <div class="header">
         <div class="logo">
             <h1>meilindev</h1>
-            <p>simple, honest web craft</p>
+            <p>websites that work for you</p>
         </div>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Blog</a>
-            <a href="#">About</a>
-        </div>
-    </div>
-
-    <!-- intro section / what I do (informational) -->
-    <div class="intro">
-        <h2>I build clear, human-friendly websites.</h2>
-        <p>No fluff, no hidden fees. Just HTML, CSS, and a bit of JavaScript to make things work. <strong>For small businesses, creators, and blogs</strong> – your online presence should feel like you.</p>
-        <p>📄 I also share what I learn: coding tips, design thoughts, and honest advice for the self‑employed.</p>
-        <div class="button-row">
-            <a href="#" class="btn" id="cvBtn"><i class="fas fa-file-alt"></i> CV</a>
-            <a href="#" class="btn" id="projectsBtn"><i class="fas fa-folder-open"></i> Past projects</a>
-            <a href="#" class="btn" id="linkedinBtn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-            <a href="#" class="btn" id="emailBtn"><i class="fas fa-envelope"></i> Email</a>
-            <a href="#" class="btn" id="fiverrBtn"><i class="fab fa-fiverr"></i> Fiverr</a>
+        <div class="nav">
+            <a href="#">work</a>
+            <a href="#">pricing</a>
+            <a href="#">contact</a>
         </div>
     </div>
 
-    <!-- blog preview (static posts – easy to add more) -->
-    <div class="section-title">📝 recent thoughts & tutorials</div>
-    <div class="blog-cards">
-        <div class="blog-card">
-            <h3><a href="#">Why I still write vanilla HTML/CSS for clients</a></h3>
-            <div class="date">Apr 18, 2025</div>
-            <p>Frameworks are great, but for 90% of small business sites, plain code is faster, cheaper, and easier to maintain...</p>
-            <a href="#" class="read-more">read more →</a>
-        </div>
-        <div class="blog-card">
-            <h3><a href="#">How to choose a colour palette (sage green edition)</a></h3>
-            <div class="date">Apr 5, 2025</div>
-            <p>First impressions matter. I’ll walk you through picking calm, professional colours that work for your brand...</p>
-            <a href="#" class="read-more">read more →</a>
-        </div>
-        <div class="blog-card">
-            <h3><a href="#">3 things every small business website needs</a></h3>
-            <div class="date">Mar 22, 2025</div>
-            <p>Clear contact, mobile-friendly design, and one honest goal. You don't need 50 plugins to succeed online...</p>
-            <a href="#" class="read-more">read more →</a>
+    <!-- hero -->
+    <div class="hero">
+        <div class="price-tag">✨ flat rate from $499 / website</div>
+        <h2>Your small business <br> deserves a modern, fast website.</h2>
+        <div class="subhead">No page builders. No monthly fees. Just clean HTML/CSS/JS — hand-coded and delivered in 7 days.</div>
+        <div class="btn-group">
+            <a href="#" class="btn-primary" id="contactMainBtn"><i class="fas fa-paper-plane"></i> Start a project</a>
+            <a href="#" class="btn-secondary" id="portfolioBtn"><i class="fas fa-eye"></i> See past work</a>
         </div>
     </div>
 
-    <!-- optional note: full blog archive -->
-    <div style="text-align: center; margin: 2rem 0;">
-        <a href="#" class="btn" style="background:#eaf5e3;">📚 see all blog posts →</a>
+    <!-- features / why me -->
+    <div class="features">
+        <div class="feature"><i class="fas fa-bolt"></i><h3>Lightning fast</h3><p>No bloat, just pure code. Your visitors won't wait.</p></div>
+        <div class="feature"><i class="fas fa-mobile-alt"></i><h3>Fully responsive</h3><p>Looks perfect on phones, tablets, and desktops.</p></div>
+        <div class="feature"><i class="fas fa-search"></i><h3>SEO friendly</h3><p>Clean markup that Google loves.</p></div>
+        <div class="feature"><i class="fas fa-headset"></i><h3>Human support</h3><p>You'll talk to me, not a bot.</p></div>
+    </div>
+
+    <!-- sample work / social proof -->
+    <div class="work">
+        <h3>📁 real examples I've built</h3>
+        <div class="work-grid">
+            <div class="work-item"><i class="fas fa-store"></i><p>Bakery site</p></div>
+            <div class="work-item"><i class="fas fa-hand-sparkles"></i><p>Coach landing page</p></div>
+            <div class="work-item"><i class="fas fa-tools"></i><p>Handyman brochure</p></div>
+            <div class="work-item"><i class="fas fa-blog"></i><p>Blog + newsletter</p></div>
+        </div>
+        <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem;">Want to see live previews? <a href="#" id="projectsPreviewLink" style="color:#2c6e3c;">Click here →</a></p>
+    </div>
+
+    <!-- direct call to action + your 5 buttons -->
+    <div style="text-align: center; margin: 2rem 0 1rem;">
+        <h3 style="font-size: 1.5rem;">Let's talk about your project</h3>
+        <p style="margin-bottom: 1rem;">Reach me through any channel below.</p>
+        <div class="contact-row">
+            <a href="#" class="contact-btn" id="cvBtn"><i class="fas fa-file-alt"></i> CV</a>
+            <a href="#" class="contact-btn" id="projectsBtn"><i class="fas fa-folder-open"></i> Past projects</a>
+            <a href="#" class="contact-btn" id="linkedinBtn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="#" class="contact-btn" id="emailBtn"><i class="fas fa-envelope"></i> Email</a>
+            <a href="#" class="contact-btn" id="fiverrBtn"><i class="fab fa-fiverr"></i> Fiverr</a>
+        </div>
     </div>
 
     <div class="footer">
-        <i class="fas fa-code"></i> meilindev · built with HTML/CSS/JS · design for clarity
+        <i class="fas fa-code"></i> meilindev — hand-coded websites for small business
     </div>
 </div>
 
@@ -243,32 +312,48 @@
     const LINKEDIN_URL = "https://linkedin.com/in/meilindev";
     const EMAIL_ADDRESS = "hello@meilindev.com";
     const FIVERR_URL = "https://fiverr.com/meilindev";
+    const PORTFOLIO_LINK = PROJECTS_LINK;  // same as past projects
 
-    // Buttons
+    // Button handlers
     document.getElementById('cvBtn')?.addEventListener('click', (e) => {
         e.preventDefault();
         if (CV_LINK !== "cv_meilindev.pdf") window.open(CV_LINK, '_blank');
-        else alert("📄 Please upload your CV and update CV_LINK in the script.");
+        else alert("📄 Upload your CV and update CV_LINK.");
     });
     document.getElementById('projectsBtn')?.addEventListener('click', (e) => {
         e.preventDefault();
         if (PROJECTS_LINK !== "https://your-portfolio-link.com") window.open(PROJECTS_LINK, '_blank');
-        else alert("📁 Add your past projects link (GitHub repo, Notion, or simple portfolio page).");
+        else alert("📁 Add your past projects link.");
     });
     document.getElementById('linkedinBtn')?.addEventListener('click', (e) => {
         e.preventDefault();
         if (LINKEDIN_URL !== "https://linkedin.com/in/meilindev") window.open(LINKEDIN_URL, '_blank');
-        else alert("🔗 Set your LinkedIn profile URL.");
+        else alert("🔗 Set your LinkedIn URL.");
     });
     document.getElementById('emailBtn')?.addEventListener('click', (e) => {
         e.preventDefault();
         if (EMAIL_ADDRESS !== "hello@meilindev.com") window.location.href = `mailto:${EMAIL_ADDRESS}`;
-        else alert("✉️ Add your email address.");
+        else alert("✉️ Set your email address.");
     });
     document.getElementById('fiverrBtn')?.addEventListener('click', (e) => {
         e.preventDefault();
         if (FIVERR_URL !== "https://fiverr.com/meilindev") window.open(FIVERR_URL, '_blank');
-        else alert("⭐ Add your Fiverr profile URL.");
+        else alert("⭐ Add your Fiverr profile.");
+    });
+    document.getElementById('contactMainBtn')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (EMAIL_ADDRESS !== "hello@meilindev.com") window.location.href = `mailto:${EMAIL_ADDRESS}`;
+        else alert("✉️ Please set your email address to contact.");
+    });
+    document.getElementById('portfolioBtn')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (PORTFOLIO_LINK !== "https://your-portfolio-link.com") window.open(PORTFOLIO_LINK, '_blank');
+        else alert("📁 Add your past projects link.");
+    });
+    document.getElementById('projectsPreviewLink')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (PROJECTS_LINK !== "https://your-portfolio-link.com") window.open(PROJECTS_LINK, '_blank');
+        else alert("📁 Add your past projects link.");
     });
 </script>
 </body>
