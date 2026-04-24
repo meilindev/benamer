@@ -6,7 +6,7 @@
     <title>Your Name | Professional Portfolio</title>
     <!-- Google Fonts: Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (free icons) -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -17,24 +17,23 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(145deg, #f9f3e6 0%, #f0e7d9 100%);
+            background: linear-gradient(145deg, #e9f3e6 0%, #dde9da 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 2rem 1.5rem;
-            color: #2c3e4e;
+            color: #2c3e2f;
         }
 
-        /* Pastel colour palette:
-           Soft cream background, muted sage, blush accents, gentle blue-grey text */
+        /* Sage green pastel palette */
         .card {
-            max-width: 780px;
+            max-width: 880px;
             width: 100%;
-            background: #fffef7;
+            background: #fefef7;
             border-radius: 2rem;
             padding: 2.5rem 2rem;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 20px 35px -12px rgba(60, 70, 50, 0.12), 0 1px 2px rgba(0, 0, 0, 0.02);
             transition: transform 0.2s ease;
         }
 
@@ -42,7 +41,6 @@
             transform: translateY(-3px);
         }
 
-        /* Profile / intro section */
         .intro {
             text-align: center;
             margin-bottom: 2.5rem;
@@ -50,14 +48,14 @@
 
         .avatar {
             font-size: 3.8rem;
-            background: #e6dfd1;
+            background: #e2ecd9;
             width: 100px;
             height: 100px;
             line-height: 100px;
             text-align: center;
             border-radius: 50%;
             margin: 0 auto 1.2rem;
-            color: #8b7a6b;
+            color: #5b7c5c;
             box-shadow: 0 8px 14px rgba(0,0,0,0.02);
         }
 
@@ -65,15 +63,15 @@
             font-size: 2.2rem;
             font-weight: 600;
             letter-spacing: -0.3px;
-            color: #3a5e6b;
+            color: #3c6b47;
             margin-bottom: 0.5rem;
         }
 
         .tagline {
             font-size: 1rem;
             font-weight: 400;
-            color: #7f8e79;
-            background: #f5efe7;
+            color: #6b8f6e;
+            background: #eef5ea;
             display: inline-block;
             padding: 0.3rem 1rem;
             border-radius: 30px;
@@ -84,8 +82,8 @@
             margin-top: 1.5rem;
             font-size: 1rem;
             line-height: 1.5;
-            color: #4a5b62;
-            max-width: 500px;
+            color: #4a5e48;
+            max-width: 540px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -94,14 +92,14 @@
             margin: 1.8rem 0;
             border: none;
             height: 2px;
-            background: linear-gradient(90deg, #f0e2cf, #d9cdb6, #f0e2cf);
+            background: linear-gradient(90deg, #dfecda, #c2d3bb, #dfecda);
         }
 
-        /* Buttons grid */
+        /* Buttons grid - now with more columns */
         .buttons-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.2rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
             margin: 1.8rem 0 0.8rem;
         }
 
@@ -109,15 +107,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             background: #ffffff;
-            border: 1px solid #e2dacf;
-            padding: 0.9rem 0.5rem;
+            border: 1px solid #cfdec6;
+            padding: 0.85rem 0.5rem;
             border-radius: 60px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 500;
-            font-size: 1rem;
-            color: #3a5e6b;
+            font-size: 0.95rem;
+            color: #3c6b47;
             text-decoration: none;
             transition: all 0.25s ease;
             box-shadow: 0 1px 2px rgba(0,0,0,0.02);
@@ -125,39 +123,31 @@
         }
 
         .btn i {
-            font-size: 1.2rem;
-            color: #9ab3a5;
+            font-size: 1.1rem;
+            color: #8bb56a;
             transition: color 0.2s;
         }
 
         .btn:hover {
-            background: #fdf8f0;
-            border-color: #c5b9a6;
+            background: #f9fef5;
+            border-color: #afcaa2;
             transform: translateY(-2px);
             box-shadow: 0 8px 18px rgba(0,0,0,0.05);
         }
 
         .btn:hover i {
-            color: #7f8e79;
+            color: #5c8f4c;
         }
 
-        /* Special style for external link (KCL) */
-        .btn-kcl {
-            background: #f8f6f0;
-            border-color: #d3cbbe;
-        }
-
-        /* footer */
         .footer-note {
             text-align: center;
             margin-top: 2.5rem;
             font-size: 0.75rem;
-            color: #b7aa97;
+            color: #98ae8b;
             letter-spacing: 0.3px;
         }
 
-        /* Responsive */
-        @media (max-width: 550px) {
+        @media (max-width: 620px) {
             .card {
                 padding: 1.8rem;
             }
@@ -165,11 +155,11 @@
                 font-size: 1.8rem;
             }
             .buttons-grid {
-                gap: 0.9rem;
+                gap: 0.8rem;
             }
             .btn {
-                padding: 0.7rem 0.5rem;
-                font-size: 0.9rem;
+                padding: 0.7rem 0.3rem;
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -178,11 +168,11 @@
     <div class="card">
         <div class="intro">
             <div class="avatar">
-                <i class="fas fa-user-astronaut"></i>
+                <i class="fas fa-seedling"></i>
             </div>
             <h1>Alex Johnson</h1>
             <div class="tagline">
-                <i class="fas fa-map-pin"></i> Global researcher &nbsp;|&nbsp; China studies
+                <i class="fas fa-map-pin"></i> Researcher &nbsp;|&nbsp; China Studies
             </div>
             <div class="description">
                 Welcome to my professional hub. I focus on cross-cultural insights, 
@@ -193,12 +183,12 @@
         <hr />
 
         <div class="buttons-grid">
-            <!-- CV button (replace # with actual file link) -->
+            <!-- CV button -->
             <a href="#" class="btn" id="cvButton">
                 <i class="fas fa-file-alt"></i> Download CV
             </a>
 
-            <!-- LinkedIn button (replace # with actual profile link) -->
+            <!-- LinkedIn button -->
             <a href="#" class="btn" id="linkedinButton">
                 <i class="fab fa-linkedin-in"></i> LinkedIn
             </a>
@@ -208,85 +198,100 @@
                 <i class="fas fa-envelope"></i> Email
             </a>
 
-            <!-- KCL China Studies Society external website -->
-            <a href="#" class="btn btn-kcl" id="kclButton">
-                <i class="fas fa-university"></i> KCL China Studies Society
+            <!-- KCL China Studies Society -->
+            <a href="#" class="btn" id="kclButton">
+                <i class="fas fa-university"></i> KCL China Studies
+            </a>
+
+            <!-- NEW: Publications button -->
+            <a href="#" class="btn" id="publicationsButton">
+                <i class="fas fa-book-open"></i> Publications
+            </a>
+
+            <!-- NEW: GitHub button -->
+            <a href="#" class="btn" id="githubButton">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+
+            <!-- NEW: Services button -->
+            <a href="#" class="btn" id="servicesButton">
+                <i class="fas fa-hand-sparkles"></i> Services
             </a>
         </div>
 
         <div class="footer-note">
-            <i class="fas fa-hand-peace"></i> Connect meaningfully — let's collaborate
+            <i class="fas fa-leaf"></i> Let's cultivate meaningful work
         </div>
     </div>
 
     <script>
         // ==============================================
-        // REPLACE THESE LINKS WITH YOUR REAL ONES
+        // 🔁 REPLACE THESE LINKS WITH YOUR REAL ONES
         // ==============================================
-        // 1) CV link: upload your CV.pdf to GitHub repo and put the raw / relative path
-        const CV_LINK = "cv_example.pdf";        // e.g., "cv_john_doe.pdf" or "/assets/cv.pdf"
-        // 2) LinkedIn profile URL
+
+        // Existing links
+        const CV_LINK = "cv_example.pdf";                // e.g., "cv_john.pdf"
         const LINKEDIN_URL = "https://www.linkedin.com/in/yourprofile/";
-        // 3) Email address (opens default email client)
         const EMAIL_ADDRESS = "your.email@example.com";
-        // 4) KCL China Studies Society website
-        const KCL_WEBSITE = "https://www.kclsu.org/groups/activities/society/china-studies/";  // official or any real link
+        const KCL_WEBSITE = "https://www.kclsu.org/groups/activities/society/china-studies/";
+
+        // 🆕 New links for the added buttons
+        const PUBLICATIONS_LINK = "https://scholar.google.com/citations?user=yourID";  // or a page listing your papers
+        const GITHUB_URL = "https://github.com/meilindev";                            // your GitHub profile
+        const SERVICES_LINK = "https://yourwebsite.com/services";                     // link to consulting/services page
 
         // ----------------------------------------------
-        // If you don't have the exact KCL page, you can change to:
-        // const KCL_WEBSITE = "https://www.kcl.ac.uk/china-studies";  (example)
-        // ----------------------------------------------
-
-        // Get button elements
-        const cvBtn = document.getElementById('cvButton');
-        const linkedinBtn = document.getElementById('linkedinButton');
-        const emailBtn = document.getElementById('emailButton');
-        const kclBtn = document.getElementById('kclButton');
-
         // Assign click handlers
-        if (cvBtn) {
-            cvBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                if (CV_LINK && CV_LINK !== "cv_example.pdf") {
-                    window.open(CV_LINK, '_blank');
-                } else {
-                    alert("📄 CV link not yet configured. Please replace CV_LINK in the script with your actual CV file path.");
-                }
-            });
-        }
+        // ----------------------------------------------
 
-        if (linkedinBtn) {
-            linkedinBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                if (LINKEDIN_URL && LINKEDIN_URL !== "https://www.linkedin.com/in/yourprofile/") {
-                    window.open(LINKEDIN_URL, '_blank');
-                } else {
-                    alert("🔗 LinkedIn URL not set. Edit the script and add your LinkedIn profile link.");
-                }
-            });
-        }
+        // CV
+        document.getElementById('cvButton')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (CV_LINK && CV_LINK !== "cv_example.pdf") window.open(CV_LINK, '_blank');
+            else alert("📄 CV link not configured. Please replace CV_LINK with your actual CV file path.");
+        });
 
-        if (emailBtn) {
-            emailBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                if (EMAIL_ADDRESS && EMAIL_ADDRESS !== "your.email@example.com") {
-                    window.location.href = `mailto:${EMAIL_ADDRESS}`;
-                } else {
-                    alert("✉️  Email address not set. Please update EMAIL_ADDRESS in the script.");
-                }
-            });
-        }
+        // LinkedIn
+        document.getElementById('linkedinButton')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (LINKEDIN_URL && LINKEDIN_URL !== "https://www.linkedin.com/in/yourprofile/") window.open(LINKEDIN_URL, '_blank');
+            else alert("🔗 LinkedIn URL not set. Edit the script.");
+        });
 
-        if (kclBtn) {
-            kclBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                if (KCL_WEBSITE && KCL_WEBSITE !== "https://www.kclsu.org/groups/activities/society/china-studies/") {
-                    window.open(KCL_WEBSITE, '_blank');
-                } else {
-                    alert("🌐 KCL China Studies Society link is not configured. Replace the KCL_WEBSITE variable with the correct URL.");
-                }
-            });
-        }
+        // Email
+        document.getElementById('emailButton')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (EMAIL_ADDRESS && EMAIL_ADDRESS !== "your.email@example.com") window.location.href = `mailto:${EMAIL_ADDRESS}`;
+            else alert("✉️ Email address not set.");
+        });
+
+        // KCL China Studies
+        document.getElementById('kclButton')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (KCL_WEBSITE && KCL_WEBSITE !== "https://www.kclsu.org/groups/activities/society/china-studies/") window.open(KCL_WEBSITE, '_blank');
+            else alert("🌐 KCL website link not configured.");
+        });
+
+        // 🆕 Publications
+        document.getElementById('publicationsButton')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (PUBLICATIONS_LINK && PUBLICATIONS_LINK !== "https://scholar.google.com/citations?user=yourID") window.open(PUBLICATIONS_LINK, '_blank');
+            else alert("📚 Publications link not set. Add your Google Scholar or personal publication page.");
+        });
+
+        // 🆕 GitHub
+        document.getElementById('githubButton')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (GITHUB_URL && GITHUB_URL !== "https://github.com/meilindev") window.open(GITHUB_URL, '_blank');
+            else alert("🐙 GitHub URL not set. Update GITHUB_URL with your profile.");
+        });
+
+        // 🆕 Services
+        document.getElementById('servicesButton')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (SERVICES_LINK && SERVICES_LINK !== "https://yourwebsite.com/services") window.open(SERVICES_LINK, '_blank');
+            else alert("🛠️ Services page link not configured. Add your consulting or service page.");
+        });
     </script>
 </body>
 </html>
