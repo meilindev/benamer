@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Your Name | Professional Portfolio</title>
-    <!-- Google Fonts: Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>meilindev · Web Development Services</title>
+    <!-- Montserrat Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -17,281 +17,313 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(145deg, #e9f3e6 0%, #dde9da 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem 1.5rem;
-            color: #2c3e2f;
-        }
-
-        /* Sage green pastel palette */
-        .card {
-            max-width: 880px;
-            width: 100%;
-            background: #fefef7;
-            border-radius: 2rem;
-            padding: 2.5rem 2rem;
-            box-shadow: 0 20px 35px -12px rgba(60, 70, 50, 0.12), 0 1px 2px rgba(0, 0, 0, 0.02);
-            transition: transform 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
-        }
-
-        .intro {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .avatar {
-            font-size: 3.8rem;
-            background: #e2ecd9;
-            width: 100px;
-            height: 100px;
-            line-height: 100px;
-            text-align: center;
-            border-radius: 50%;
-            margin: 0 auto 1.2rem;
-            color: #5b7c5c;
-            box-shadow: 0 8px 14px rgba(0,0,0,0.02);
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            font-weight: 600;
-            letter-spacing: -0.3px;
-            color: #3c6b47;
-            margin-bottom: 0.5rem;
-        }
-
-        .tagline {
-            font-size: 1rem;
-            font-weight: 400;
-            color: #6b8f6e;
-            background: #eef5ea;
-            display: inline-block;
-            padding: 0.3rem 1rem;
-            border-radius: 30px;
-            margin-top: 0.5rem;
-        }
-
-        .description {
-            margin-top: 1.5rem;
-            font-size: 1rem;
+            background: linear-gradient(135deg, #eef5e6 0%, #dde9da 100%);
+            color: #2c4228;
             line-height: 1.5;
-            color: #4a5e48;
-            max-width: 540px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        hr {
-            margin: 1.8rem 0;
-            border: none;
-            height: 2px;
-            background: linear-gradient(90deg, #dfecda, #c2d3bb, #dfecda);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
         }
 
-        /* Buttons grid - now with more columns */
-        .buttons-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 2rem 1rem 3rem;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 0.6rem 1.8rem;
+            border-radius: 60px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            margin-bottom: 2rem;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: #5b8c5a;
+        }
+
+        .logo h2 {
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: -0.5px;
+            color: #3c6947;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #2a5a3b;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero .highlight {
+            background: linear-gradient(120deg, #d4e8cf 0%, #c2dfb8 80%);
+            padding: 0.1rem 0.4rem;
+            border-radius: 12px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 1rem auto 2rem;
+            color: #476b43;
+        }
+
+        /* CTA buttons grid */
+        .button-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 1rem;
-            margin: 1.8rem 0 0.8rem;
+            margin: 2rem 0 1rem;
         }
 
         .btn {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
             gap: 10px;
-            background: #ffffff;
-            border: 1px solid #cfdec6;
-            padding: 0.85rem 0.5rem;
-            border-radius: 60px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            font-size: 0.95rem;
+            background: white;
+            border: 1px solid #bfddb2;
+            padding: 0.8rem 1.6rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
             color: #3c6b47;
             text-decoration: none;
-            transition: all 0.25s ease;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
 
         .btn i {
-            font-size: 1.1rem;
-            color: #8bb56a;
-            transition: color 0.2s;
+            font-size: 1.2rem;
+            color: #7caa6b;
         }
 
         .btn:hover {
-            background: #f9fef5;
-            border-color: #afcaa2;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+            background: #fafff7;
+            border-color: #9bc28a;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
 
-        .btn:hover i {
-            color: #5c8f4c;
+        /* Services cards */
+        .services {
+            margin: 5rem 0 4rem;
         }
 
-        .footer-note {
+        .section-title {
             text-align: center;
-            margin-top: 2.5rem;
-            font-size: 0.75rem;
-            color: #98ae8b;
-            letter-spacing: 0.3px;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2a5a3b;
+            margin-bottom: 2rem;
         }
 
-        @media (max-width: 620px) {
-            .card {
-                padding: 1.8rem;
-            }
-            h1 {
-                font-size: 1.8rem;
-            }
-            .buttons-grid {
-                gap: 0.8rem;
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: #b5d6a8;
+            margin: 0.5rem auto 0;
+            border-radius: 5px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem 1.5rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            transition: all 0.25s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            border: 1px solid #e1f0da;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #c2ddb5;
+            box-shadow: 0 20px 30px -12px rgba(70, 100, 60, 0.15);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: #5b8c5a;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            color: #2f5a3b;
+        }
+
+        .card p {
+            color: #5a7353;
+            font-size: 0.95rem;
+        }
+
+        /* About / why me */
+        .about {
+            background: #f6fcf2;
+            border-radius: 2rem;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border: 1px solid #d9eace;
+        }
+
+        .about h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2f5a3b;
+            margin-bottom: 1rem;
+        }
+
+        .about p {
+            font-size: 1rem;
+            color: #4a6742;
+            max-width: 800px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #cee2c4;
+            font-size: 0.8rem;
+            color: #7c9a6f;
+        }
+
+        @media (max-width: 680px) {
+            .hero h1 {
+                font-size: 2rem;
             }
             .btn {
-                padding: 0.7rem 0.3rem;
+                padding: 0.6rem 1.2rem;
                 font-size: 0.85rem;
+            }
+            .button-grid {
+                gap: 0.7rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="intro">
-            <div class="avatar">
-                <i class="fas fa-seedling"></i>
-            </div>
-            <h1>Mariam Benamer</h1>
-            <div class="tagline">
-                <i class="fas fa-map-pin"></i> Researcher &nbsp;|&nbsp; China Studies
-            </div>
-            <div class="description">
-                Welcome to my professional hub. I focus on cross-cultural insights, 
-                China's political economy, and digital transformation.
-            </div>
+<div class="container">
+    <!-- Hero / Brand -->
+    <div class="hero">
+        <div class="logo">
+            <i class="fas fa-code"></i>
+            <h2>meilindev</h2>
         </div>
-
-        <hr />
-
-        <div class="buttons-grid">
-            <!-- CV button -->
-            <a href="#" class="btn" id="cvButton">
-                <i class="fas fa-file-alt"></i> Download CV
-            </a>
-
-            <!-- LinkedIn button -->
-            <a href="#" class="btn" id="linkedinButton">
-                <i class="fab fa-linkedin-in"></i> LinkedIn
-            </a>
-
-            <!-- Email button -->
-            <a href="#" class="btn" id="emailButton">
-                <i class="fas fa-envelope"></i> Email
-            </a>
-
-            <!-- KCL China Studies Society -->
-            <a href="#" class="btn" id="kclButton">
-                <i class="fas fa-university"></i> KCL China Studies
-            </a>
-
-            <!-- NEW: Publications button -->
-            <a href="#" class="btn" id="publicationsButton">
-                <i class="fas fa-book-open"></i> Publications
-            </a>
-
-            <!-- NEW: GitHub button -->
-            <a href="#" class="btn" id="githubButton">
-                <i class="fab fa-github"></i> GitHub
-            </a>
-
-            <!-- NEW: Services button -->
-            <a href="#" class="btn" id="servicesButton">
-                <i class="fas fa-hand-sparkles"></i> Services
-            </a>
-        </div>
-
-        <div class="footer-note">
-            <i class="fas fa-leaf"></i> Let's cultivate meaningful work
+        <h1>Modern, responsive websites <br> <span class="highlight">crafted for your success</span></h1>
+        <p>I build fast, beautiful, and user‑friendly websites that tell your story and grow your business. <br> From one‑page portfolios to full business sites — fully custom, no bloat.</p>
+        
+        <!-- Button row: CV, Past Projects, LinkedIn, Email, Fiverr -->
+        <div class="button-grid">
+            <a href="#" class="btn" id="cvBtn"><i class="fas fa-file-alt"></i> CV / Resume</a>
+            <a href="#" class="btn" id="projectsBtn"><i class="fas fa-folder-open"></i> Past Projects</a>
+            <a href="#" class="btn" id="linkedinBtn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="#" class="btn" id="emailBtn"><i class="fas fa-envelope"></i> Email</a>
+            <a href="#" class="btn" id="fiverrBtn"><i class="fas fa-star"></i> Fiverr</a>
         </div>
     </div>
 
-    <script>
-        // ==============================================
-        // 🔁 REPLACE THESE LINKS WITH YOUR REAL ONES
-        // ==============================================
+    <!-- Services offered -->
+    <div class="services">
+        <div class="section-title">What I deliver</div>
+        <div class="cards">
+            <div class="card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Custom websites</h3>
+                <p>Fully responsive, semantic HTML/CSS/JS. No templates — every line written for you.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-rocket"></i>
+                <h3>Performance & SEO</h3>
+                <p>Lightning fast load times and clean code that search engines love.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-palette"></i>
+                <h3>Modern design</h3>
+                <p>Pastel, minimal, or bold — we’ll match your brand identity perfectly.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-headset"></i>
+                <h3>Ongoing support</h3>
+                <p>Revisions, maintenance, and updates to keep your site fresh.</p>
+            </div>
+        </div>
+    </div>
 
-        // Existing links
-        const CV_LINK = "cv_example.pdf";                // e.g., "cv_john.pdf"
-        const LINKEDIN_URL = "https://www.linkedin.com/in/yourprofile/";
-        const EMAIL_ADDRESS = "mbenamer108@gmail.com";
-        const KCL_WEBSITE = "https://www.kclsu.org/groups/activities/society/china-studies/";
+    <!-- About / credibility -->
+    <div class="about">
+        <h3>Why meilindev?</h3>
+        <p>I’m a dedicated web developer with a passion for clean design and intuitive user experiences. Every project is treated like my own — pixel‑perfect, accessible, and ready to convert visitors into clients. You get direct communication, fast turnarounds, and full ownership of the final code.</p>
+        <p style="margin-top: 1rem;">📩 Ready to start? Click <strong>Email</strong> or <strong>Fiverr</strong> above — let’s bring your vision to life.</p>
+    </div>
 
-        // 🆕 New links for the added buttons
-        const PUBLICATIONS_LINK = "https://scholar.google.com/citations?user=yourID";  // or a page listing your papers
-        const GITHUB_URL = "https://github.com/meilindev";                            // your GitHub profile
-        const SERVICES_LINK = "https://yourwebsite.com/services";                     // link to consulting/services page
+    <div class="footer">
+        <i class="fas fa-code-branch"></i> meilindev — web development, redefined. 
+    </div>
+</div>
 
-        // ----------------------------------------------
-        // Assign click handlers
-        // ----------------------------------------------
+<script>
+    // ==============================================
+    // REPLACE THESE LINKS WITH YOUR REAL ONES
+    // ==============================================
+    const CV_LINK = "cv_meilindev.pdf";               // upload your CV PDF to repo
+    const PROJECTS_LINK = "https://yourportfolio.com/projects";  // e.g., GitHub pages with case studies
+    const LINKEDIN_URL = "https://www.linkedin.com/in/meilindev/";
+    const EMAIL_ADDRESS = "hello@meilindev.com";
+    const FIVERR_URL = "https://www.fiverr.com/meilindev";
 
-        // CV
-        document.getElementById('cvButton')?.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (CV_LINK && CV_LINK !== "cv_example.pdf") window.open(CV_LINK, '_blank');
-            else alert("📄 CV link not configured. Please replace CV_LINK with your actual CV file path.");
-        });
+    // Assign click events
+    document.getElementById('cvBtn')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (CV_LINK && CV_LINK !== "cv_meilindev.pdf") window.open(CV_LINK, '_blank');
+        else alert("📄 CV link not set. Please upload your CV and update CV_LINK.");
+    });
 
-        // LinkedIn
-        document.getElementById('linkedinButton')?.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (LINKEDIN_URL && LINKEDIN_URL !== "https://www.linkedin.com/in/yourprofile/") window.open(LINKEDIN_URL, '_blank');
-            else alert("🔗 LinkedIn URL not set. Edit the script.");
-        });
+    document.getElementById('projectsBtn')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (PROJECTS_LINK && PROJECTS_LINK !== "https://yourportfolio.com/projects") window.open(PROJECTS_LINK, '_blank');
+        else alert("📁 Past projects link not configured. Add a portfolio page.");
+    });
 
-        // Email
-        document.getElementById('emailButton')?.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (EMAIL_ADDRESS && EMAIL_ADDRESS !== "your.email@example.com") window.location.href = `mailto:${EMAIL_ADDRESS}`;
-            else alert("✉️ Email address not set.");
-        });
+    document.getElementById('linkedinBtn')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (LINKEDIN_URL && LINKEDIN_URL !== "https://www.linkedin.com/in/meilindev/") window.open(LINKEDIN_URL, '_blank');
+        else alert("🔗 LinkedIn URL missing. Update the LINKEDIN_URL variable.");
+    });
 
-        // KCL China Studies
-        document.getElementById('kclButton')?.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (KCL_WEBSITE && KCL_WEBSITE !== "https://www.kclsu.org/groups/activities/society/china-studies/") window.open(KCL_WEBSITE, '_blank');
-            else alert("🌐 KCL website link not configured.");
-        });
+    document.getElementById('emailBtn')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (EMAIL_ADDRESS && EMAIL_ADDRESS !== "hello@meilindev.com") window.location.href = `mailto:${EMAIL_ADDRESS}`;
+        else alert("✉️ Email address not set. Edit EMAIL_ADDRESS.");
+    });
 
-        // 🆕 Publications
-        document.getElementById('publicationsButton')?.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (PUBLICATIONS_LINK && PUBLICATIONS_LINK !== "https://scholar.google.com/citations?user=yourID") window.open(PUBLICATIONS_LINK, '_blank');
-            else alert("📚 Publications link not set. Add your Google Scholar or personal publication page.");
-        });
-
-        // 🆕 GitHub
-        document.getElementById('githubButton')?.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (GITHUB_URL && GITHUB_URL !== "https://github.com/meilindev") window.open(GITHUB_URL, '_blank');
-            else alert("🐙 GitHub URL not set. Update GITHUB_URL with your profile.");
-        });
-
-        // 🆕 Services
-        document.getElementById('servicesButton')?.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (SERVICES_LINK && SERVICES_LINK !== "https://yourwebsite.com/services") window.open(SERVICES_LINK, '_blank');
-            else alert("🛠️ Services page link not configured. Add your consulting or service page.");
-        });
-    </script>
+    document.getElementById('fiverrBtn')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (FIVERR_URL && FIVERR_URL !== "https://www.fiverr.com/meilindev") window.open(FIVERR_URL, '_blank');
+        else alert("⭐ Fiverr link not configured. Add your Fiverr profile URL.");
+    });
+</script>
 </body>
 </html>
